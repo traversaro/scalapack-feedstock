@@ -2,7 +2,7 @@
 {% set version = "2.0.2" %}
 {% set sha256 = "0c74aeae690fe5ee4db7926f49c5d0bb69ce09eea75beb915e00bba07530395c" %}
 {% set mpi = 'mpich' %}
-{% set openblas_version = '0.2.19' %}
+{% set openblas_version = '0.2.20' %}
 
 package:
   name: {{ name }}
@@ -14,7 +14,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 requirements:
