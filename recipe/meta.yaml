@@ -12,19 +12,20 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 2
+  number: 3
   skip: true  # [win]
 
 requirements:
   build:
-    - gcc
     - cmake
-    - toolchain
+    - {{ compiler('fortran') }}
+    - {{ compiler('c') }}
+  host:
     - {{ mpi }}
-    - openblas 0.2.20|0.2.20.*
+    - openblas
   run:
     - {{ mpi }}
-    - openblas 0.2.20|0.2.20.*
+    - openblas
 
 test:
   commands:
