@@ -6,6 +6,11 @@ if [[ $(uname) == "Darwin" && $mpi == "mpich" ]]; then
   EXTRA_CMAKE="-DMPI_C_LIB_NAMES=mpi;pmpi -DMPI_CXX_LIB_NAMES=mpi;pmpi;mpicxx"
 fi
 
+if [[ "$c_compiler" == "gcc" ]]; then
+  # seems to be needed to find libquadmath during detection with conda gcc
+  export LD_LIBRARY_PATH=$PREFIX/lib
+fi
+
 mkdir build && cd build
 cmake \
     $EXTRA_CMAKE \
@@ -13,5 +18,8 @@ cmake \
     -DCMAKE_INSTALL_PREFIX="$PREFIX" \
     -DCMAKE_PREFIX_PATH="$PREFIX" \
     ..
+
+# unset after detection
+unset LD_LIBRARY_PATH
 
 make install -j${CPU_COUNT}
