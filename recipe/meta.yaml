@@ -22,7 +22,7 @@ requirements:
     - {{ compiler('c') }}
   host:
     - libblas
-    - libcblas
+    - liblapack
     - {{ mpi }}
   run:
     - {{ mpi }}
