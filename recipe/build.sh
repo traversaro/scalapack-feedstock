@@ -17,7 +17,7 @@ cmake \
     -DBUILD_SHARED_LIBS=ON \
     -DCMAKE_INSTALL_PREFIX="$PREFIX" \
     -DCMAKE_PREFIX_PATH="$PREFIX" \
-    ..
+    .. || (cat CMakeFiles/CMakeOutput.log && cat CMakeFiles/CMakeError.log && exit 1)
 
 # unset after detection
 unset LD_LIBRARY_PATH

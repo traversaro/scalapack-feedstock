@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1004
+  number: 1005
   skip: true  # [win]
 
 requirements:
@@ -21,11 +21,11 @@ requirements:
     - {{ compiler('fortran') }}
     - {{ compiler('c') }}
   host:
+    - libblas
+    - liblapack
     - {{ mpi }}
-    - openblas
   run:
     - {{ mpi }}
-    - openblas
 
 test:
   commands:
