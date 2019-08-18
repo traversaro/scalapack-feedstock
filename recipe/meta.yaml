@@ -12,6 +12,7 @@ source:
   sha256: {{ sha256 }}
   patches:
     - 0001-mpi3.patch
+    - 0002-cmake.patch
 
 build:
   number: 1006
