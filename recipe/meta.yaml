@@ -10,9 +10,11 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: http://www.netlib.org/{{ name }}/{{ name }}-{{ version }}.tgz
   sha256: {{ sha256 }}
+  patches:
+    - 0001-mpi3.patch
 
 build:
-  number: 1005
+  number: 1006
   skip: true  # [win]
 
 requirements:
