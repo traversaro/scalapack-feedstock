@@ -13,6 +13,7 @@ source:
   patches:
     - 0001-mpi3.patch
     - 0002-cmake.patch
+    - 0003-cmake.patch
 
 build:
   number: 1006

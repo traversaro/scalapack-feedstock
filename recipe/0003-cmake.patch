@@ -1,0 +1,24 @@
+From feb5fe78ef924e7c030a9cdaf19704f76031f426 Mon Sep 17 00:00:00 2001
+From: Isuru Fernando <isuruf@gmail.com>
+Date: Sun, 18 Aug 2019 17:57:53 -0500
+Subject: [PATCH] Update FortranMangling.cmake
+
+---
+ CMAKE/FortranMangling.cmake | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/CMAKE/FortranMangling.cmake b/CMAKE/FortranMangling.cmake
+index e9642ed..19c358c 100644
+--- a/CMAKE/FortranMangling.cmake
++++ b/CMAKE/FortranMangling.cmake
+@@ -18,6 +18,10 @@ FUNCTION(COMPILE RESULT)
+     EXECUTE_PROCESS(COMMAND ${CMAKE_COMMAND}  
+          "-DCMAKE_Fortran_COMPILER=${CMAKE_Fortran_COMPILER}"
+          "-DCMAKE_C_COMPILER=${CMAKE_C_COMPILER}"
++         "-DCMAKE_C_FLAGS:STRING=${CMAKE_C_FLAGS}"
++         "-DCMAKE_Fortran_FLAGS:STRING=${CMAKE_Fortran_FLAGS}"
++         "-DCMAKE_C_FLAGS_RELEASE:STRING=${CMAKE_C_FLAGS_RELEASE}"
++         "-DCMAKE_Fortran_FLAGS_RELEASE:STRING=${CMAKE_Fortran_FLAGS_RELEASE}"
+         WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/BLACS/INSTALL/        
+         RESULT_VARIABLE RESVAR OUTPUT_VARIABLE LOG1 ERROR_VARIABLE LOG1
+     )
