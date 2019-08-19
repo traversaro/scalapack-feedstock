@@ -13,7 +13,6 @@ source:
   patches:
     - 0001-mpi3.patch
     - 0002-cmake.patch
-    - 0003-cmake.patch
 
 build:
   number: 1006
@@ -35,8 +34,6 @@ test:
   commands:
     - test -f $PREFIX/lib/libscalapack.dylib  # [osx]
     - test -f $PREFIX/lib/libscalapack.so  # [linux]
-    - conda inspect objects  scalapack  # [osx]
-    - conda inspect linkages scalapack  # [not win]
 
 about:
   home: http://www.netlib.org/scalapack/
