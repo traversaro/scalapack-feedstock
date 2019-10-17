@@ -2,6 +2,8 @@
 {% set version = "2.0.2" %}
 {% set sha256 = "0c74aeae690fe5ee4db7926f49c5d0bb69ce09eea75beb915e00bba07530395c" %}
 
+{% set mpi = mpi or 'mpich' %}
+
 package:
   name: {{ name }}
   version: {{ version }}
@@ -15,7 +17,7 @@ source:
     - 0002-cmake.patch
 
 build:
-  number: 1006
+  number: 1007
   skip: true  # [win]
 
 requirements:
@@ -50,3 +52,5 @@ extra:
   recipe-maintainers:
     - dalcinl
     - minrk
+    - davidbrochart
+    - SylvainCorlay
