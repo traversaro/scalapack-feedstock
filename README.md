@@ -46,31 +46,17 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>osx_fortran_compiler_version4mpimpich</td>
+              <td>osx_mpimpich</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1878&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/scalapack-feedstock?branchName=master&jobName=osx&configuration=osx_fortran_compiler_version4mpimpich" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/scalapack-feedstock?branchName=master&jobName=osx&configuration=osx_mpimpich" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_fortran_compiler_version4mpiopenmpi</td>
+              <td>osx_mpiopenmpi</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1878&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/scalapack-feedstock?branchName=master&jobName=osx&configuration=osx_fortran_compiler_version4mpiopenmpi" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_fortran_compiler_version7mpimpich</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1878&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/scalapack-feedstock?branchName=master&jobName=osx&configuration=osx_fortran_compiler_version7mpimpich" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_fortran_compiler_version7mpiopenmpi</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1878&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/scalapack-feedstock?branchName=master&jobName=osx&configuration=osx_fortran_compiler_version7mpiopenmpi" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/scalapack-feedstock?branchName=master&jobName=osx&configuration=osx_mpiopenmpi" alt="variant">
                 </a>
               </td>
             </tr>
@@ -85,7 +71,12 @@ Current build status
       <img src="https://img.shields.io/badge/Windows-disabled-lightgrey.svg" alt="Windows disabled">
     </td>
   </tr>
-![ppc64le disabled](https://img.shields.io/badge/ppc64le-disabled-lightgrey.svg)
+  <tr>
+    <td>Linux_ppc64le</td>
+    <td>
+      <img src="https://img.shields.io/badge/ppc64le-disabled-lightgrey.svg" alt="ppc64le disabled">
+    </td>
+  </tr>
 </table>
 
 Current release info
@@ -180,6 +171,8 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@SylvainCorlay](https://github.com/SylvainCorlay/)
 * [@dalcinl](https://github.com/dalcinl/)
+* [@davidbrochart](https://github.com/davidbrochart/)
 * [@minrk](https://github.com/minrk/)
 
