@@ -17,7 +17,7 @@ source:
     - 0002-cmake.patch
 
 build:
-  number: 1007
+  number: 1008
   skip: true  # [win]
 
 requirements:
@@ -25,6 +25,7 @@ requirements:
     - cmake
     - {{ compiler('fortran') }}
     - {{ compiler('c') }}
+    - make
   host:
     - libblas
     - liblapack
