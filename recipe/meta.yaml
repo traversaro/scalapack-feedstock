@@ -1,6 +1,6 @@
 {% set name = "scalapack" %}
-{% set version = "2.0.2" %}
-{% set sha256 = "0c74aeae690fe5ee4db7926f49c5d0bb69ce09eea75beb915e00bba07530395c" %}
+{% set version = "2.1.0" %}
+{% set sha256 = "61d9216cf81d246944720cfce96255878a3f85dec13b9351f1fa0fd6768220a6" %}
 
 {% set mpi = mpi or 'mpich' %}
 
@@ -17,7 +17,7 @@ source:
     - 0002-cmake.patch
 
 build:
-  number: 1009
+  number: 0
   skip: true  # [win]
 
 requirements:
