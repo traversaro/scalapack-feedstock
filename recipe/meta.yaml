@@ -1,6 +1,7 @@
 {% set name = "scalapack" %}
 {% set version = "2.1.0" %}
 {% set sha256 = "61d9216cf81d246944720cfce96255878a3f85dec13b9351f1fa0fd6768220a6" %}
+
 {% set mpi = mpi or 'mpich' %}
 
 package:
@@ -18,7 +19,8 @@ build:
 
 requirements:
   build:
-    - cmake
+    # CMake pinned as a workaround for https://github.com/conda-forge/scalapack-feedstock/pull/21#issuecomment-892033610
+    - cmake 3.20
     - {{ compiler('fortran') }}
     - {{ compiler('c') }}
     - make
