@@ -11,8 +11,6 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: http://www.netlib.org/{{ name }}/{{ name }}-{{ version }}.tgz
   sha256: {{ sha256 }}
-  patches:
-    - 0002-cmake.patch
 
 build:
   number: 0
