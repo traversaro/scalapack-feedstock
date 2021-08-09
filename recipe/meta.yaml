@@ -19,8 +19,7 @@ build:
 
 requirements:
   build:
-    # CMake pinned as a workaround for https://github.com/conda-forge/scalapack-feedstock/pull/21#issuecomment-892033610
-    - cmake 3.20
+    - cmake
     - {{ compiler('fortran') }}
     - {{ compiler('c') }}
     - make
