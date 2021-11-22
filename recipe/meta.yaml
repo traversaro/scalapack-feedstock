@@ -12,6 +12,8 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: http://www.netlib.org/{{ name }}/{{ name }}-{{ version }}.tgz
   sha256: {{ sha256 }}
+  patches:
+    - fortran_mangling_cross.patch
 
 build:
   number: 0

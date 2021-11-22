@@ -8,6 +8,10 @@ if [[ "$target_platform" == "osx-64" ]]; then
   fi
 fi
 
+if [[ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]]; then
+  EXTRA_CMAKE="-DCDEFS=Add_"
+fi
+
 mkdir build && cd build
 cmake ${CMAKE_ARGS} \
     $EXTRA_CMAKE \
