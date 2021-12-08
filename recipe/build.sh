@@ -17,6 +17,7 @@ cmake ${CMAKE_ARGS} \
     $EXTRA_CMAKE \
     -DBUILD_SHARED_LIBS=ON \
     -DCMAKE_PREFIX_PATH="$PREFIX" \
+    -DMPI_BASE_DIR="$PREFIX" \
     -DCMAKE_BUILD_TYPE=Release \
     .. || (cat CMakeFiles/CMakeOutput.log && cat CMakeFiles/CMakeError.log && exit 1)
 
