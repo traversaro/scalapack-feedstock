@@ -10,6 +10,8 @@ fi
 
 if [[ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]]; then
   EXTRA_CMAKE="-DCDEFS=Add_"
+  # https://github.com/Reference-ScaLAPACK/scalapack/issues/21
+  export FFLAGS="${FFLAGS} -fallow-argument-mismatch"
 fi
 
 mkdir build && cd build
