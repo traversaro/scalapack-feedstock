@@ -13,6 +13,8 @@ if [[ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]]; then
   # https://github.com/Reference-ScaLAPACK/scalapack/issues/21
   export FFLAGS="${FFLAGS} -fallow-argument-mismatch"
   export OPAL_PREFIX=$PREFIX
+  export CC=mpicc
+  export CXX=mpic++
 fi
 
 mkdir build && cd build
