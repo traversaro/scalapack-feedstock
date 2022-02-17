@@ -9,7 +9,7 @@ if [[ "$target_platform" == "osx-64" ]]; then
 fi
 
 if [[ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]]; then
-  EXTRA_CMAKE="-DCDEFS=Add_ -DMPI_C_LIB_NAMES=$PREFIX/lib/libmpi$SHLIB_EXT -DMPI_C_WORKS=TRUE -DMPI_Fortran_LIB_NAMES=$PREFIX/lib/libmpifort$SHLIB_EXT -DMPI_Fortran_WORKS=TRUE -DMPI_DETERMINE_LIBRARY_VERSION=FALSE -DMPI_C_VERSION=3.1 -DMPI_Fortran_VERSION=3.1"
+  EXTRA_CMAKE="-DCDEFS=Add_ -DMPI_C_LIB_NAMES=$PREFIX/lib/libmpi$SHLIB_EXT -DMPI_C=$PREFIX/lib/libmpi$SHLIB_EXT -DMPI_C_WORKS=TRUE -DMPI_Fortran_LIB_NAMES=$PREFIX/lib/libmpifort$SHLIB_EXT -DMPI_Fortran=$PREFIX/lib/libmpifort$SHLIB_EXT -DMPI_Fortran_WORKS=TRUE -DMPI_DETERMINE_LIBRARY_VERSION=FALSE -DMPI_C_VERSION=3.1 -DMPI_Fortran_VERSION=3.1"
   # https://github.com/Reference-ScaLAPACK/scalapack/issues/21
   export FFLAGS="${FFLAGS} -fallow-argument-mismatch"
 fi
