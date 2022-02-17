@@ -25,6 +25,7 @@ requirements:
     - {{ compiler('fortran') }}
     - {{ compiler('c') }}
     - make
+    - {{ mpi }}                              # [build_platform != target_platform and mpi == "openmpi"]
   host:
     - libblas
     - liblapack
