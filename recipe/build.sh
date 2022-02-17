@@ -16,7 +16,7 @@ if [[ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]]; then
   export OPAL_PREFIX=$PREFIX
   export CC=mpicc
   export CXX=mpic++
-  export FC=mpiifort
+  export FC=mpifort
 fi
 
 mkdir build && cd build
