@@ -8,6 +8,9 @@ if [[ "$target_platform" == "osx-64" ]]; then
   fi
 fi
 
+# Workaround for https://github.com/conda-forge/scalapack-feedstock/pull/30#issuecomment-1061196317
+export FFLAGS="${FFLAGS} -fallow-argument-mismatch"
+
 mkdir build && cd build
 cmake \
     $EXTRA_CMAKE \
