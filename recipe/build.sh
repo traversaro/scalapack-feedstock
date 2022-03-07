@@ -12,7 +12,7 @@ fi
 export FFLAGS="${FFLAGS} -fallow-argument-mismatch"
 
 mkdir build && cd build
-cmake \
+cmake ${CMAKE_ARGS} \
     $EXTRA_CMAKE \
     -DBUILD_SHARED_LIBS=ON \
     -DCMAKE_INSTALL_PREFIX="$PREFIX" \
