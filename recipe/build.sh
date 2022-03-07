@@ -8,8 +8,12 @@ if [[ "$target_platform" == "osx-64" ]]; then
   fi
 fi
 
-# Workaround for https://github.com/conda-forge/scalapack-feedstock/pull/30#issuecomment-1061196317
-export FFLAGS="${FFLAGS} -fallow-argument-mismatch"
+if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]
+then
+  # Workaround for https://github.com/conda-forge/scalapack-feedstock/pull/30#issuecomment-1061196317
+  # As of March 2022, on macOS gfortran 9 is still used
+  export FFLAGS="${FFLAGS} -fallow-argument-mismatch"
+fi
 
 # As mpi libraries are not correctly linked in CMake scripts, use mpi wrappers for the compilers
 export CC=mpicc
