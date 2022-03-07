@@ -4,6 +4,7 @@
 
 {% set mpi = mpi or 'mpich' %}
 
+
 package:
   name: {{ name }}
   version: {{ version }}
