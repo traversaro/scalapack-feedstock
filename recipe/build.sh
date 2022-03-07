@@ -11,6 +11,11 @@ fi
 # Workaround for https://github.com/conda-forge/scalapack-feedstock/pull/30#issuecomment-1061196317
 export FFLAGS="${FFLAGS} -fallow-argument-mismatch"
 
+# As mpi libraries are not correctly linked in CMake scripts, use mpi wrappers for the compilers
+export CC=mpicc
+export CXX=mpic++
+export FC=mpifort
+
 mkdir build && cd build
 cmake ${CMAKE_ARGS} \
     $EXTRA_CMAKE \
