@@ -24,6 +24,7 @@ if [[ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]]; then
   export OMPI_CXX=$CXX
   export OMPI_FC=$CXX
   export OPAL_PREFIX=$PREFIX
+  export EXTRA_CMAKE="-DCDEFS=Add_ "
 fi
 
 # As mpi libraries are not correctly linked in CMake scripts, use mpi wrappers for the compilers
