@@ -8,7 +8,7 @@ if [[ "$target_platform" == "osx-64" ]]; then
   fi
 fi
 
-if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]
+if [ "$(uname -s)" == "Linux" ]
 then
   # Workaround for https://github.com/conda-forge/scalapack-feedstock/pull/30#issuecomment-1061196317
   # As of March 2022, on macOS gfortran 9 is still used
