@@ -8,11 +8,12 @@ if [[ "$target_platform" == "osx-64" ]]; then
   fi
 fi
 
-if [[ "$target_platform" == linux-* ]]
+if [[ "$target_platform" == linux-* || "$target_platform" == "osx-arm64"  ]]
 then
   # Workaround for https://github.com/conda-forge/scalapack-feedstock/pull/30#issuecomment-1061196317
-  # As of March 2022, on macOS gfortran 9 is still used
+  # As of March 2022, on macOS arm64 gfortran 9 is still used
   export FFLAGS="${FFLAGS} -fallow-argument-mismatch"
+  export OMPI_FCFLAGS=${FFLAGS}
 fi
 
 
@@ -35,6 +36,8 @@ export FC=mpifort
 mkdir build && cd build
 cmake ${CMAKE_ARGS} \
     $EXTRA_CMAKE \
+    -DBLAS_LIBRARIES="blas" \
+    -DLAPACK_LIBRARIES="lapack" \
     -DBUILD_SHARED_LIBS=ON \
     -DCMAKE_INSTALL_PREFIX="$PREFIX" \
     -DCMAKE_PREFIX_PATH="$PREFIX" \
