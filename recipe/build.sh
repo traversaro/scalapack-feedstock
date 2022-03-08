@@ -15,6 +15,17 @@ then
   export FFLAGS="${FFLAGS} -fallow-argument-mismatch"
 fi
 
+
+
+if [[ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]]; then
+  # This is only used by open-mpi's mpicc
+  # ignored in other cases
+  export OMPI_CC=$CC
+  export OMPI_CXX=$CXX
+  export OMPI_FC=$CXX
+  export OPAL_PREFIX=$PREFIX
+fi
+
 # As mpi libraries are not correctly linked in CMake scripts, use mpi wrappers for the compilers
 export CC=mpicc
 export CXX=mpic++
