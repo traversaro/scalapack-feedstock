@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# see https://github.com/Reference-ScaLAPACK/scalapack/issues/31
+export CFLAGS="${CFLAGS} -Wno-error=implicit-function-declaration"
+
 if [[ "$target_platform" == "osx-64" ]]; then
   TOOLS_DIR=$(dirname $($FC --print-libgcc-file-name))
   if [[ ! -f "$TOOLS_DIR/ld" ]]; then
