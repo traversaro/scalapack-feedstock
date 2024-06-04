@@ -24,7 +24,8 @@ if [[ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]]; then
   export OMPI_CXX=$CXX
   export OMPI_FC=$FC
   export OPAL_PREFIX=$PREFIX
-  export EXTRA_CMAKE="-DCDEFS=Add_ "
+  export EXTRA_CMAKE="-DCDEFS=Add_"
+  export EXTRA_CMAKE="${EXTRA_CMAKE} --debug-output --debug-trycompile"
 fi
 
 # As mpi libraries are not correctly linked in CMake scripts, use mpi wrappers for the compilers
@@ -41,6 +42,9 @@ cmake ${CMAKE_ARGS} \
     -DCMAKE_INSTALL_PREFIX="$PREFIX" \
     -DCMAKE_PREFIX_PATH="$PREFIX" \
     -DCMAKE_BUILD_TYPE=Release \
-    .. || (cat CMakeFiles/CMakeOutput.log && cat CMakeFiles/CMakeError.log && exit 1)
+    .. || (
+      cat CMakeFiles/CMakeConfigureLog.yaml;
+      exit 1
+    )
 
 make install -j${CPU_COUNT}
