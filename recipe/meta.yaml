@@ -16,7 +16,7 @@ source:
     - fortran_mangling_cross.patch
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win]
 
 requirements:
@@ -24,6 +24,7 @@ requirements:
     - cmake
     - {{ compiler('fortran') }}
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - make
     - {{ mpi }}  # [mpi == 'openmpi' and build_platform != target_platform]
   host:
