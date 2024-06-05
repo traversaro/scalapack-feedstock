@@ -13,7 +13,8 @@ fi
 
 # Workaround for https://github.com/conda-forge/scalapack-feedstock/pull/30#issuecomment-1061196317
 export FFLAGS="${FFLAGS} -fallow-argument-mismatch"
-export OMPI_FCFLAGS=${FFLAGS}
+# OMPI seems to need -I $PREFIX/lib to find mpi_f08, at least on mac-arm
+export OMPI_FCFLAGS="${FFLAGS} -I$PREFIX/lib"
 export OMPI_LDFLAGS=${LDFLAGS}
 
 
