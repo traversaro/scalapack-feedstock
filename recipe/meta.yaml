@@ -16,8 +16,10 @@ source:
     - fortran_mangling_cross.patch
 
 build:
-  number: 2
+  number: 3
   skip: true  # [win]
+  run_exports:
+    - {{ pin_subpackage("scalapack", max_pin="x.x") }}
 
 requirements:
   build:
