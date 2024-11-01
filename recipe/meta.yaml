@@ -14,9 +14,10 @@ source:
   sha256: {{ sha256 }}
   patches:
     - fortran_mangling_cross.patch
+    - high_mem_32bits.patch
 
 build:
-  number: 3
+  number: 4
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage("scalapack", max_pin="x.x") }}
@@ -59,3 +60,4 @@ extra:
     - davidbrochart
     - SylvainCorlay
     - traversaro
+    - gdonval
