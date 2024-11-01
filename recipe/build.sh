@@ -13,8 +13,10 @@ fi
 
 # Workaround for https://github.com/conda-forge/scalapack-feedstock/pull/30#issuecomment-1061196317
 export FFLAGS="${FFLAGS} -fallow-argument-mismatch"
-# OMPI seems to need -I $PREFIX/lib to find mpi_f08, at least on mac-arm
-export OMPI_FCFLAGS="${FFLAGS} -I$PREFIX/lib"
+# compiler adds $PREFIX/include via isystem, but this doesn't always have an effect
+# only seems relevant working with openmpi for some reason
+# https://github.com/conda-forge/gfortran_osx-64-feedstock/issues/57
+export OMPI_FCFLAGS="${FFLAGS} -I$PREFIX/include"
 export OMPI_LDFLAGS=${LDFLAGS}
 
 
